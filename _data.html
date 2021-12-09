@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+
+        }
+
+        td, th {
+            border: 1px solid #fff;
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+
+        }
+
+        tr:nth-child(n+13) {
+            background-color: #00FF7F;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Січень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Лютий</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Березень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Квітень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Травень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Червень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Липень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Серпень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Вересень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Жовтень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Листопад</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Грудень</td>
+        <td><input type="number" class="MonthMoney"></td>
+    </tr>
+    <tr>
+        <td>Сума</td>
+        <td id="sum"></td>
+    </tr>
+    <tr>
+        <td>Середнє</td>
+        <td id="av"></td>
+    </tr>
+    <tr>
+        <td>Мінімальне</td>
+        <td id="min"></td>
+    </tr>
+    <tr>
+        <td>Максимальне</td>
+        <td id="max"></td>
+    </tr>
+</table>
+<br><button onclick="Calculation()">Обчислити</button>
+
+<script>
+    function Calculation() {
+        var allEl = document.getElementsByClassName("MonthMoney");
+        var month = [];
+        for(var i = 0; i < allEl.length; i++)
+        {
+            month.push(Number(allEl[i].value));
+        }
+        var sum = 0;
+        for(var i = 0; i < month.length; i++)
+        {
+            sum += month[i];
+        }
+        var average = sum/12;
+        var min = minf(month);
+        var max = maxf(month);
+        document.getElementById("sum").innerText = sum.toString();
+        document.getElementById("av").innerText = average.toString();
+        document.getElementById("min").innerText = min.toString();
+        document.getElementById("max").innerText = max.toString();
+    }
+    function maxf(arr) {
+        return Math.max.apply(null, arr);
+    }
+    function minf(arr) {
+        return Math.min.apply(null, arr);
+    }
+</script>
+</body>
+</html>

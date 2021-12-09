@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <style>
+        button{
+            width: 120px;
+            height: 40px;
+            background: #f3f0f1;
+            margin-bottom: 25px;
+            border-radius: 32px;
+            font: 20px Bahnschrift;
+            position: absolute;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+<button id="but">КНОПКА</button>
+<script>
+    var posLeft, posTop, posmaxTop, posmaxLeft, elem;
+    elem = document.getElementById("but");
+    posmaxLeft = document.documentElement.clientWidth-elem.offsetWidth;
+    posmaxTop = document.documentElement.clientHeight-elem.offsetHeight;
+    elem.onmousemove = click;
+
+    function click() {
+        posLeft = Math.random() * posmaxLeft;
+        elem.style.left = posLeft + "px";
+        posTop=Math.random() * posmaxTop;
+        elem.style.top = posTop + "px";
+    }
+</script>
+</body>
+</html>

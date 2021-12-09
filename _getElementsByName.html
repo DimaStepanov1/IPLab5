@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 3</title>
+</head>
+<body>
+	<label for="ukrCheck"><input type="checkbox" id="ukrCheck" name="ukrCheck"> Ukrainian </label></br>
+
+	<label for="engCheck"><input type="checkbox" id="engCheck" name="engCheck"> English </label></br>
+
+	<label for="spnCheck"><input type="checkbox" id="spnCheck" name="spnCheck"> Spanish </label></br>
+
+	<label for="itlCheck"><input type="checkbox" id="itlCheck" name="itlCheck"> Italic </label></br>
+
+	<div id="result"></div>
+	<button id="btnRes">Ok</button>
+
+	<script>
+		let btnRes= document.getElementById("btnRes");
+		btnRes.addEventListener("click", function(){
+			let ukrText ="ukr",
+				engText ="eng",
+				spnText ="spn",
+				itlText ="itl",
+				resultText =[];
+
+			if(document.getElementsByName("ukrCheck")[0].checked){
+				resultText.push(ukrText);
+			}
+			if(document.getElementsByName("engCheck")[0].checked){
+				resultText.push(engText);
+			}
+			if(document.getElementsByName("spnCheck")[0].checked){
+				resultText.push(spnText);
+			}
+			if(document.getElementsByName("itlCheck")[0].checked){
+				resultText.push(itlText);
+			}
+
+			document.getElementById("result").innerHTML= resultText.join(",");
+
+		})
+
+	</script>
+</body>
+</html>

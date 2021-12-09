@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emails</title>
+</head>
+<body>
+<label for="ukrCheck"><input type="checkbox" id="smthCheck" name="smthCheck"> something@gmail.com </label></br>
+
+	<label for="engCheck"><input type="checkbox" id="oneCheck" name="oneCheck"> one@gmail.com </label></br>
+
+	<label for="spnCheck"><input type="checkbox" id="twoCheck" name="twoCheck"> two@gmail.com </label></br>
+
+	<label for="itlCheck"><input type="checkbox" id="threeCheck" name="threeCheck"> three@gmail.com </label></br>
+
+	<label for="ukrCheck"><input type="checkbox" id="fourCheck" name="fourCheck"> four@gmail.com </label></br>
+
+	<label for="engCheck"><input type="checkbox" id="fiveCheck" name="fiveCheck"> five@gmail.com </label></br>
+
+	<label for="spnCheck"><input type="checkbox" id="sixCheck" name="sixCheck"> six@gmail.com </label></br>
+
+	<label for="itlCheck"><input type="checkbox" id="sevenCheck" name="sevenCheck"> seven@gmail.com </label></br>
+
+	<div id="result"></div>
+	<button id="btnRes">Ok</button>
+
+	<script>
+		let btnRes= document.getElementById("btnRes");
+		btnRes.addEventListener("click", function(){
+			let smthText ="something@gmail.com",
+				oneText ="one@gmail.com",
+				twoText ="two@gmail.com",
+				threeText ="three@gmail.com",
+				fourText ="four@gmail.com"
+				fiveText ="five@gmail.com",
+				sixText ="six@gmail.com",
+				sevenText ="seven@gmail.com",
+				resultText =[];
+
+			if(document.getElementsByName("smthCheck")[0].checked){
+				resultText.push(smthText);
+			}
+			if(document.getElementsByName("oneCheck")[0].checked){
+				resultText.push(oneText);
+			}
+			if(document.getElementsByName("twoCheck")[0].checked){
+				resultText.push(twoText);
+			}
+			if(document.getElementsByName("threeCheck")[0].checked){
+				resultText.push(threeText);
+			}
+			if(document.getElementsByName("fourCheck")[0].checked){
+				resultText.push(fourText);
+			}
+			if(document.getElementsByName("fiveCheck")[0].checked){
+				resultText.push(fiveText);
+			}
+			if(document.getElementsByName("sixCheck")[0].checked){
+				resultText.push(sixText);
+			}
+			if(document.getElementsByName("sevenCheck")[0].checked){
+				resultText.push(sevenText);
+			}
+
+			document.getElementById("result").innerHTML= resultText.join("; ");
+
+		})
+
+	</script>
+
+</body>
+</html>
